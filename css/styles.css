@@ -120,6 +120,9 @@ img{display: block;}
     line-height: 1.5;
     letter-spacing: 0.02em;
     padding: 24px 0;
+    transition-property: color, babackground-colorc;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-menu-link:hover,
@@ -146,6 +149,9 @@ img{display: block;}
     font-weight: 400;
     line-height: 1.5; 
     letter-spacing: 0.02em;
+    transition-property: color, babackground-colorc;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -207,6 +213,9 @@ margin-bottom: 48px;
     border-radius: 4px;
     cursor: pointer;
     margin: 0 auto;
+    transition-property: color, babackground-colorc;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
  
 .hero-btn:hover,
@@ -318,6 +327,7 @@ margin-bottom: 72px;
     border-radius: 0px 0px 4px 4px;
 background: var(--white, #FFF);
 flex-basis: calc((100% - 3 * 24px) / 4);
+box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .team-name{
@@ -364,7 +374,14 @@ margin-bottom: 8px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    transition-property: color, babackground-colorc;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.team-links:hover,
+.team-links:focus {
+    background-color:#404BBF;
 }
 
 .client {
@@ -403,6 +420,9 @@ margin-bottom: 72px;
  align-items: center;
  justify-content: center;
  color: #8E8F99;
+ transition-property: color, babackground-colorc;
+ transition-duration: 250ms;
+ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover,
@@ -437,6 +457,9 @@ margin-bottom: 72px;
 
 .navigation-btn{
     background-color: var(--cloud, #F4F4FD);
+    transition-property: color, babackground-colorc;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);    
 }
 
 .navigation-btn {
@@ -476,11 +499,50 @@ border-radius: 4px;
     row-gap: 48px;
 }
 .portfolio-item {
-    flex-basis: calc((100% - 48px) / 3)
+    flex-basis: calc((100% - 48px) / 3);
+    position: relative;
+    
+}
+
+.portfolio-item:hover { 
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-img{
     
+}
+
+.portfolio-link:hover .portfolio-cover {
+    transform: translateY(0);
+
+}
+
+.portfolio-cover-wrap {
+    position: relative;
+    overflow: hidden;  
+}
+
+.portfolio-cover {
+    position: absolute;
+    top: 0;
+    background: var(--iris, #4D5AE5);
+    height: 100%;
+    padding-top: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 164px;
+    display: flex;
+    align-items: center;transform: translateY(100%);
+    transition: transform 250ms linear;
+}
+
+.portfolio-cover-text{
+color: #F4F4FD;
+font-size: 16px;
+font-weight: 400;
+line-height: 1.5;
+letter-spacing: 0.02em;
+
 }
 
 .portfolio-subtitle {
@@ -569,6 +631,9 @@ letter-spacing: 0.02em;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition-property: color, babackground-colorc;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-links:hover,
@@ -578,4 +643,41 @@ letter-spacing: 0.02em;
 
 .footer-icons {
     fill: #F4F4FD;
+}
+
+.bakcdrop {
+    position: fixed;
+    width: 100%;
+    min-height: 100%;
+    background-color:rgba(46, 47, 66, 0.40);
+    top: 0;
+    transition: opacity 250ms linear, visibility 250ms linear;
+}
+
+.modal {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 408px;
+height: 584px;
+border-radius: 4px;
+background: var(--dairy, #FCFCFC);
+box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+}
+
+.modal-imag {
+
+}
+
+.modal-close-btm {
+position: absolute;
+top: 24px;
+right: 24px;
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
