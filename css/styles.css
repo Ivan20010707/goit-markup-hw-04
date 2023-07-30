@@ -115,7 +115,7 @@ img{display: block;}
 }
 
 .header-menu-link {
-    color: var(--logos--cl);
+    color: #404bbf;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -124,6 +124,17 @@ img{display: block;}
     transition-property: color, babackground-colorc;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.header-menu-link:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
 }
 
 .header-menu-link:hover,
